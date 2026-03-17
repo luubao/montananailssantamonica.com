@@ -447,6 +447,14 @@ a {
   white-space: nowrap;
 }
 
+.service-link {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 18px;
+  color: var(--accent-deep);
+  font-weight: 700;
+}
+
 .experience-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -596,6 +604,22 @@ a {
   border-radius: 28px;
   border: 1px solid var(--line);
   box-shadow: var(--shadow);
+}
+
+.location-note {
+  margin-top: 22px;
+  padding: 22px 24px;
+  border-radius: 24px;
+  border: 1px solid var(--line);
+  background: rgba(255, 251, 246, 0.86);
+  box-shadow: var(--shadow);
+}
+
+.location-note p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 1rem;
 }
 
 .map-frame iframe {
