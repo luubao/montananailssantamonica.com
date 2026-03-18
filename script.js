@@ -2,7 +2,7 @@ const header = document.querySelector(".site-header");
 const navToggle = document.querySelector(".nav-toggle");
 const navLinks = document.querySelectorAll(".site-nav a");
 const revealItems = document.querySelectorAll(
-  ".hero-copy, .hero-visual, .section-heading, .trust-card, .service-card, .experience-card, .gallery-tile, .lookbook-thumb, .note-card, .testimonial-card, .faq-card, .contact-card, .final-cta, .menu-panel, .image-card"
+  ".hero-copy, .hero-media, .section-heading, .trust-card, .service-card, .experience-card, .gallery-tile, .lookbook-thumb, .detail-card, .testimonial-card, .faq-card, .contact-card, .final-cta, .menu-card, .page-image, .service-image"
 );
 const lightbox = document.querySelector("[data-lightbox-root]");
 const lightboxImage = lightbox?.querySelector("img");
@@ -11,15 +11,15 @@ const lightboxTriggers = document.querySelectorAll("[data-lightbox]");
 
 if (header && navToggle) {
   navToggle.addEventListener("click", () => {
-    const isOpen = header.classList.toggle("menu-open");
-    document.body.classList.toggle("menu-open", isOpen);
+    const isOpen = header.classList.toggle("nav-open");
+    document.body.classList.toggle("nav-open", isOpen);
     navToggle.setAttribute("aria-expanded", String(isOpen));
   });
 
   navLinks.forEach((link) => {
     link.addEventListener("click", () => {
-      header.classList.remove("menu-open");
-      document.body.classList.remove("menu-open");
+      header.classList.remove("nav-open");
+      document.body.classList.remove("nav-open");
       navToggle.setAttribute("aria-expanded", "false");
     });
   });
@@ -47,7 +47,7 @@ if ("IntersectionObserver" in window) {
 if (lightbox && lightboxImage) {
   const closeLightbox = () => {
     lightbox.classList.remove("is-open");
-    document.body.classList.remove("menu-open");
+    document.body.classList.remove("lightbox-open");
     lightboxImage.src = "";
     lightboxImage.alt = "";
   };
@@ -64,7 +64,7 @@ if (lightbox && lightboxImage) {
       lightboxImage.src = src;
       lightboxImage.alt = alt;
       lightbox.classList.add("is-open");
-      document.body.classList.add("menu-open");
+      document.body.classList.add("lightbox-open");
     });
   });
 
