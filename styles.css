@@ -141,6 +141,11 @@ textarea {
   transform: translateY(-1px);
 }
 
+.site-nav a.nav-cta,
+.site-nav a.nav-cta:hover {
+  color: #fff;
+}
+
 .nav-toggle {
   display: none;
   width: 48px;
